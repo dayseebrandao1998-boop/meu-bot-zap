@@ -34,7 +34,16 @@ client.on('message', async (msg) => {
 
     try {
         // Dá uma "personalidade" para a IA e manda a mensagem do cliente
-        const prompt = "Você é um atendente de delivery muito simpático e prestativo. Responda a esta mensagem de forma curta e amigável: " + msg.body;
+        const prompt = `Você é o atendente virtual do nosso Delivery.
+        Seu objetivo é ser super educado, tirar dúvidas rápidas e SEMPRE direcionar o cliente para fazer o pedido no nosso site.
+        Link do nosso site: http://o08gsoo8kgk8g04swkoo48c4.187.77.34.112.sslip.io
+
+        Regras:
+        1. Seja curto, direto e use emojis.
+        2. Não invente preços ou produtos que não existem.
+        3. Termine a mensagem convidando o cliente para acessar o link do site para ver o cardápio e pedir.
+
+        Mensagem do cliente: ${msg.body}`;
         
         const result = await model.generateContent(prompt);
         const respostaIA = result.response.text();
@@ -50,4 +59,5 @@ client.on('message', async (msg) => {
 });
 
 // Liga o robô
+
 client.initialize();
