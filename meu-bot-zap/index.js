@@ -4,7 +4,7 @@ const { GoogleGenerativeAI } = require('@google/generative-ai');
 
 // 1. Conecta com a Inteligência Artificial usando sua chave
 const genAI = new GoogleGenerativeAI("AIzaSyAdZiOfyTDYOCd_lPcwPmD4HKnPzVqyKwA");
-const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+const model = genAI.getGenerativeModel({ model: "gemini-pro" });
 
 // 2. Configura o WhatsApp para rodar no Servidor (VPS)
 const client = new Client({
@@ -61,3 +61,4 @@ client.on('message', async (msg) => {
 // Liga o robô
 
 client.initialize();
+
