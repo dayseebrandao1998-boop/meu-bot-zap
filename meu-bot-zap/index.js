@@ -7,7 +7,7 @@ const { GoogleGenerativeAI } = require('@google/generative-ai');
 const genAI = new GoogleGenerativeAI("AIzaSyAdZiOfyTDYOCd_lPcwPmD4HKnPzVqyKwA");
 
 // Usando o modelo Flash que é rápido e barato
-const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+const model = genAI.getGenerativeModel({ model: "gemini-pro" });
 
 const client = new Client({
     authStrategy: new LocalAuth(),
@@ -67,3 +67,4 @@ client.on('message', async (msg) => {
 
 // Inicia o robô
 client.initialize();
+
